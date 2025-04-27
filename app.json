@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/shoye/shoye",
+    "pages/qiugan/qiugan",
+    "pages/jifen/jifen",
+    "pages/qiufang/qiufang",
+    "pages/wode/wode"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "台球助手",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light"
+  
+  },
+ 
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#007aff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/shoye/shoye",
+        "text": "首页",
+        "iconPath": "/tupian/shoye.png",
+        "selectedIconPath": "/tupian/shoye-active.png"
+      },
+      {
+        "pagePath": "pages/qiugan/qiugan",
+        "text": "球杆推荐",
+        "iconPath": "/tupian/qiugan.png",
+        "selectedIconPath": "/tupian/qiugan-active.png"
+      },
+      {
+        "pagePath": "pages/jifen/jifen",
+        "text": "计分系统",
+        "iconPath": "/tupian/jifen.png",
+        "selectedIconPath": "/tupian/jifen-active.png"
+      },
+      {
+        "pagePath": "pages/qiufang/qiufang",
+        "text": "附近球房",
+        "iconPath": "/tupian/qiufang.png",
+        "selectedIconPath": "/tupian/qiufang-active.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "/tupian/wode.png",
+        "selectedIconPath": "/tupian/wode-active.png"
+      }
+    ]
+  }
+}
