@@ -1,0 +1,91 @@
+<view class="page-container">
+  <!-- 页面标题 -->
+  <view class="page-title">🎱 台球大师</view>
+
+  <!-- 玩法选择 -->
+  <view class="game-mode">
+    <picker mode="selector" range="{{gameModes}}" value="{{currentMode}}" bindchange="changeMode">
+      <view class="mode-selector">
+        {{gameModes[currentMode]}}
+        <text class="arrow">▼</text>
+      </view>
+    </picker>
+  </view>
+
+  <!-- 玩家信息 -->
+  <view class="players-container">
+    <view 
+      class="player-card {{activePlayer == index ? 'active' : ''}}" 
+      wx:for="{{players}}" 
+      wx:key="index"
+    >
+      <view class="player-header">
+        <text class="player-name">{{item.name}}</text>
+        <view class="turn-indicator {{activePlayer == index ? 'active' : ''}}"></view>
+      </view>
+      <text class="score-display {{currentMode < 2 && index == 1 ? 'negative' : ''}}">
+        {{currentMode < 2 ? (index == 0 ? item.score : -players[0].score) : item.score}}
+      </text>
+    </view>
+  </view>
+
+  <!-- 计分操作区 -->
+  <view class="scoring-container">
+    <!-- 九球/四球 -->
+    <view wx:if="{{currentMode < 2}}" class="button-row">
+      <button 
+        wx:for="{{nineBallTypes}}" 
+        wx:key="type"
+        data-type="{{item.type}}"
+        bindtap="handleNineBall"
+        style="background-color: {{item.color}}"
+        class="nine-ball-btn"
+      >
+        <text class="btn-label">{{item.label}}</text>
+        <text class="btn-points">{{item.points}}</text>
+      </button>
+    </view>
+
+    <!-- 斯诺克 -->
+    <view wx:elif="{{currentMode == 2}}" class="snooker-container">
+      <view class="snooker-grid">
+        <button 
+          wx:for="{{snookerBalls}}" 
+          wx:key="type"
+          data-type="{{item.type}}"
+          bindtap="handleSnooker"
+          class="snooker-btn {{item.class}}"
+        >
+          {{item.label}}
+          <text class="point">+{{item.points}}</text>
+        </button>
+      </view>
+
+      <button 
+        class="switch-player-btn"
+        bindtap="switchSnookerPlayer"
+      >
+        切换对手击球
+      </button>
+    </view>
+
+    <!-- 黑八 -->
+    <view wx:else class="button-row">
+      <button 
+        class="win-btn {{index == 0 ? 'player1' : 'player2'}}"
+        wx:for="{{players}}"
+        wx:key="index"
+        bindtap="handleBlackEight"
+        data-player="{{index}}"
+      >
+        {{item.name}}获胜
+        <text class="score">{{item.score}}</text>
+      </button>
+    </view>
+  </view>
+
+  <!-- 控制按钮 -->
+  <view class="control-bar">
+    <button class="reset-btn" bindtap="resetAll">重置比赛</button>
+  </view>
+</view>

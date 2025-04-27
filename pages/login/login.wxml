@@ -1,0 +1,52 @@
+<view class="login-container">
+
+  <!-- 登录卡片 -->
+  <view class="login-card">
+    <image class="logo" src="/tupian/台球装备.png"></image>
+    
+    <!-- 表单区域 -->
+    <view class="form-area">
+      <view class="input-group">
+        <image class="input-icon" src="/tupian/denglu.png"></image>
+        <input 
+          class="input" 
+          placeholder="手机号/邮箱" 
+          placeholder-style="color: #c0c4cc;"
+          bindinput="onAccountInput"
+        />
+      </view>
+      
+      <view class="input-group">
+        <image class="input-icon" src="/tupian/suo.png"></image>
+        <input 
+          class="input" 
+          password 
+          placeholder="输入密码" 
+          placeholder-style="color: #c0c4cc;"
+          bindinput="onPasswordInput"
+        />
+      </view>
+
+      <button 
+        class="login-btn primary" 
+        bindtap="handleLogin"
+        loading="{{loading}}"
+      >
+        立即登录
+      </button>
+    </view>
+
+    <!-- 第三方登录 -->
+    <view class="third-login">
+      <text class="divider">或使用以下方式登录</text>
+      <button 
+        class="wechat-login" 
+        open-type="getUserInfo"
+        bindgetuserinfo="handleWechatLogin"
+      >
+        <image class="wechat-icon" src="/tupian/wv.png"></image>
+        微信一键登录
+      </button>
+    </view>
+  </view>
+</view>

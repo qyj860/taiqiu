@@ -1,0 +1,158 @@
+.search-box {
+  padding: 15px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid rgb(27, 14, 14);
+}
+
+.banner-container {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+  border-radius: 0 0 16rpx 16rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0,0,0,0.08);
+}
+
+.enhanced-swiper {
+  height: 100%;
+}
+
+.enhanced-swiper image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+}
+
+.enhanced-swiper image:active {
+  transform: scale(1.02);
+}
+
+.swiper-title {
+  position: absolute;
+  color: white;
+  font-size: 32rpx;
+  font-weight: bold;
+  text-shadow: 0 2rpx 8rpx rgba(0,0,0,0.5);
+  padding: 20rpx;
+  background: linear-gradient(transparent, rgba(0,0,0,0.5));
+  width: 100%;
+}
+
+.swiper-title.top {
+  top: 0;
+  background: linear-gradient(rgba(0,0,0,0.5), transparent);
+}
+
+.custom-indicator {
+  position: absolute;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  margin: 0 8rpx;
+  transition: all 0.3s;
+}
+
+.dot.active {
+  width: 24rpx;
+  background: #FFFFFF;
+  border-radius: 6rpx;
+}
+
+/* 新闻区优化 */
+.news-section {
+  padding: 32rpx;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+
+.more-link {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24rpx;
+}
+
+.news-card {
+  background: white;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.news-card:active {
+  transform: translateY(-4rpx);
+  box-shadow: 0 6rpx 16rpx rgba(0,0,0,0.1);
+}
+
+.news-image {
+  width: 100%;
+  height: 180rpx;
+}
+
+.news-image.highlight {
+  border: 4rpx solid #FFD700;
+}
+
+.news-meta {
+  padding: 16rpx;
+}
+
+.news-title {
+  font-size: 30rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+.news-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.news-tag {
+  padding: 4rpx 12rpx;
+  border-radius: 20rpx;
+  font-size: 22rpx;
+}
+
+.news-tag.hot {
+  background: #FFF0F0;
+  color: #FF4D4F;
+}
+
+.news-tag.new {
+  background: #F0F9FF;
+  color: #1890FF;
+}

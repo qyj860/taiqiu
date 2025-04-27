@@ -1,0 +1,242 @@
+.page-container {
+  background: #f8fafc;
+  min-height: 100vh;
+  padding: 20px 15px;
+  font-family: 'Helvetica Neue', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-title {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #2d3748;
+  margin: 1.5rem 0;
+  letter-spacing: 1px;
+}
+
+.game-mode {
+  background: white;
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.mode-selector {
+  padding: 1rem;
+  font-size: 1.1rem;
+  color: #4a5568;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow {
+  color: #718096;
+  margin-left: 8px;
+  font-size: 0.9rem;
+}
+
+/* 玩家信息 */
+.players-container {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.player-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.player-card.active {
+  transform: translateX(8px);
+  border-left: 4px solid #48bb78;
+  background: linear-gradient(to right, #f7fafc, #fff);
+}
+
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.player-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.turn-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cbd5e0;
+  transition: all 0.3s ease;
+}
+
+.turn-indicator.active {
+  background: #48bb78;
+  box-shadow: 0 0 10px rgba(72,187,120,0.3);
+}
+
+.score-display {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #48bb78;
+  text-align: right;
+  display: block !important; /* 确保显示 */
+}
+
+.score-display.negative {
+  color: #f56565 !important;
+}
+
+/* 按钮行布局 */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* 九球按钮 */
+.nine-ball-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  min-width: calc(25% - 10px);
+}
+
+.nine-ball-btn:active {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+.btn-label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.btn-points {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* 斯诺克按钮容器 */
+.snooker-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 斯诺克网格布局 */
+.snooker-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 10px;
+}
+
+.snooker-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 15px 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  height: 80px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.snooker-btn:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+.point {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+.snooker-btn.s-red { background: #e74c3c; }
+.snooker-btn.s-yellow { background: #f1c40f; }
+.snooker-btn.s-green { background: #2ecc71; }
+.snooker-btn.s-brown { background: #a84300; }
+.snooker-btn.s-blue { background: #3498db; }
+.snooker-btn.s-pink { background: #fd79a8; }
+.snooker-btn.s-black { background: #2c3e50; }
+.snooker-btn.s-gray { background: #95a5a6; }
+
+.switch-player-btn {
+  background: #718096;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* 黑八按钮 */
+.win-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 16px;
+  color: white;
+  min-width: calc(50% - 10px);
+  transition: all 0.3s ease;
+}
+
+.win-btn.player1 {
+  background: linear-gradient(135deg, #4299e1, #3182ce);
+}
+
+.win-btn.player2 {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+}
+
+.win-btn:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+/* 控制按钮 */
+.reset-btn {
+  background: #2d3748;
+  color: white;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  width: 100%;
+}
+
+/* 响应式调整 */
+@media (max-width: 767px) {
+  .nine-ball-btn,
+  .snooker-btn,
+  .win-btn {
+    min-width: calc(50% - 10px);
+  }
+}

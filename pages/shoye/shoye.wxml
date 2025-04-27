@@ -1,0 +1,45 @@
+<view class="home-page">
+  <view class="search-box">
+    <input placeholder="搜索..." bindinput="onSearch"></input>
+  </view>
+
+  <!-- 增强型轮播图 -->
+  <view class="banner-container">
+    <swiper class="enhanced-swiper" autoplay interval="3000" circularindicator-dots="{{true}}"indicator-color="rgba(255,255,255,0.5)"indicator-active-color="#FFFFFF" circular="true">
+      <swiper-item wx:for="{{banners}}" wx:key="id">
+        <image src="{{item.image}}" mode="aspectFill" lazy-loadbinderror="onImageError"data-index="{{index}}"/>
+        <!-- 轮播图标题 -->
+        <text class="swiper-title {{item.titlePosition || 'bottom'}}">
+          {{item.title}}
+        </text>
+      </swiper-item>
+    </swiper>
+    <!-- 自定义指示器 -->
+    <view class="custom-indicator">
+      <text wx:for="{{banners}}" wx:key="id" 
+            class="dot {{swiperCurrent === index ? 'active' : ''}}">
+      </text>
+    </view>
+  </view>
+
+  <!-- 智能新闻区 -->
+  <view class="news-section">
+    <view class="section-header">
+      <text class="section-title">最新资讯</text>
+      <text class="more-link" bindtap="viewAllNews">查看更多 ></text>
+    </view>
+    
+    <view class="news-grid">
+      <view wx:for="{{newsList}}" wx:key="id" class="news-card"bindtap="viewNewsDetail"data-id="{{item.id}}">
+        <image src="{{item.cover}}" mode="aspectFill"class="news-image {{itemimportant ? 'highlight' : ''}}"/>
+        <view class="news-meta">
+          <text class="news-title">{{item.title}}</text>
+          <view class="news-footer">
+            <text class="news-time">{{item.time}}</text>
+            <text class="news-tag {{item.tagType}}">{{item.tag}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

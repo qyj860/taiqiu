@@ -1,0 +1,72 @@
+<view class="page-container">
+  <!-- 页面标题 -->
+  <view class="page-title">球杆推荐</view>
+
+  <!-- 搜索功能 -->
+  <view class="search-box">
+    <input placeholder="搜索球杆..." bindinput="onSearch"></input>
+  </view>
+
+  <!-- 筛选器 -->
+  <view class="filter-container">
+    <view class="filter-item">
+      <text>价格</text>
+      <picker mode="selector" range="{{priceOptions}}" bindchange="changePrice">
+        <view class="filter-value">{{priceOptions[priceIndex]}}</view>
+      </picker>
+    </view>
+    <view class="filter-item">
+      <text>品牌</text>
+      <picker mode="selector" range="{{brandOptions}}" bindchange="changeBrand">
+        <view class="filter-value">{{brandOptions[brandIndex]}}</view>
+      </picker>
+    </view>
+    <view class="filter-item">
+      <text>评分</text>
+      <picker mode="selector" range="{{ratingOptions}}" bindchange="changeRating">
+        <view class="filter-value">{{ratingOptions[ratingIndex]}}</view>
+      </picker>
+    </view>
+  </view>
+
+  <!-- 球杆列表 -->
+  <scroll-view 
+    class="cue-list"
+    scroll-y
+    enable-back-to-top
+    refresher-enabled
+    refresher-triggered="{{refreshing}}"
+    bindrefresherrefresh="onRefresh"
+    bindscrolltolower="onReachBottom"
+  >
+    <view wx:for="{{displayedCues}}" wx:key="id" class="cue-item" bindtap="viewDetail" data-id="{{item.id}}">
+      <image src="{{item.image}}" mode="aspectFill"></image>
+      <view class="cue-info">
+        <text class="name">{{item.name}}</text>
+        <view class="meta">
+          <text class="brand">{{item.brand}}</text>
+          <text class="price">{{item.price}}元</text>
+        </view>
+        <view class="rating-container">
+          <text class="rating">{{item.rating}}⭐</text>
+          <text class="reviews">{{item.reviews}}条评价</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{loadingMore}}" class="loading-more">
+      <text>加载中...</text>
+    </view>
+  </scroll-view>
+
+  <!-- 返回顶部按钮 -->
+  <view wx:if="{{showBackTop}}" class="back-top" bindtap="scrollToTop">
+    <text>↑</text>
+  </view>
+
+  <!-- 标签栏 -->
+  <tab-bar 
+    active-tab="{{activeTab}}" 
+    tabs="{{tabs}}" 
+    bind:switchtab="switchTab"
+  ></tab-bar>
+</view>

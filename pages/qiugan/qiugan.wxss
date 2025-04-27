@@ -1,0 +1,167 @@
+/* 页面基础样式 */
+.page-container {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  color: #333;
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* 搜索框 */
+.search-box {
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  background-color: #f5f5f5;
+  font-size: 14px;
+}
+
+/* 筛选器 */
+.filter-container {
+  display: flex;
+  padding: 10px 15px;
+  background: white;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.filter-item {
+  flex: 1;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.filter-item text {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.filter-value {
+  padding: 8px 5px;
+  background: #f5f5f5;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+}
+
+/* 球杆列表 */
+.cue-list {
+  height: calc(100vh - 250px);
+}
+
+.cue-item {
+  margin: 10px 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.cue-item:active {
+  transform: scale(0.98);
+}
+
+.cue-item image {
+  width: 100%;
+  height: 180px;
+  display: block;
+}
+
+.cue-info {
+  padding: 12px;
+}
+
+.name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.brand {
+  font-size: 13px;
+  color: #666;
+  background: #f0f0f0;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.price {
+  font-size: 15px;
+  color: #ff5722;
+  font-weight: bold;
+}
+
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating {
+  font-size: 14px;
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.reviews {
+  font-size: 12px;
+  color: #999;
+}
+
+.loading-more {
+  text-align: center;
+  padding: 15px;
+  color: #999;
+  font-size: 14px;
+}
+
+/* 返回顶部按钮 */
+.back-top {
+  position: fixed;
+  right: 20px;
+  bottom: 100px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(52, 152, 219, 0.9);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.back-top text {
+  font-size: 18px;
+  font-weight: bold;
+}
